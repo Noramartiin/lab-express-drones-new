@@ -1,1 +1,23 @@
 // Iteration #1
+require("../configs/db.config.js");
+
+const mongoose = require("mongoose");
+
+
+// let DroneModel = mongoose.model("../models/Drone.model.js", DroneSchema);
+let DroneModel= require('../models/Drone.model.js')
+
+DroneModel.insertMany([
+  { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
+  { name: "Racer 57", propellers: 4, maxSpeed: 20 },
+  { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
+])
+
+.then(()=>{
+    console.log('Creation succesful')
+    mongoose.conection.close();
+})
+.catch(()=>{
+    console.log('Error creating it')
+})
+// module.exports=DroneModel;
