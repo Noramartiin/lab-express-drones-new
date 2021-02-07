@@ -75,7 +75,7 @@ router.post("/drones/:id/edit", (req, res, next) => {
     });
 });
 
-router.post("/drones/:id/delete", (req, res, next) => {
+router.get("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
 
   let id = req.params.id;
